@@ -21,7 +21,7 @@ HunyuanOCR stands as a leading end-to-end OCR expert powered by Hunyuan's native
 Built on Tencent's Hunyuan technology, this versatile model delivers exceptional performance through end-to-end architecture design and single-pass inference. It significantly simplifies deployment while maintaining competitive performance against both established cascade systems and commercial APIs.
 
 <div align="center">
-  <img src="./assets/hyocr-pipeline.png" alt="HunyuanOCR framework" width="90%">
+  <img src="./assets/hyocr-pipeline.png" alt="HunyuanOCR framework" width="80%">
 </div>
 
 ## ✨ Key Features
