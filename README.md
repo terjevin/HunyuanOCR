@@ -163,20 +163,28 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 
 ## 💡 Visualizations
 <details>
-<summary>点击展开查看详细效果</summary>
+<summary>Click to view detailed results.</summary>
 
 Spotting
+<details>
+<summary>Click to view detailed results.</summary>
 
 <p align="left">
  <img src="./assets/spotting1_cropped.png" width="30%"/> <br>
  <img src="./assets/vis_document_23.jpg" width="30%"/> <br>
 </p>
 
-
+</details>
 Document Processing
-
+<details>
+<summary>Click to view detailed results.</summary>
+</details>
 
 Information Extraction
+<details>
+<summary>Click to view detailed results.</summary>
+
+
 <p align="left">
  <img src="./assets/ie_parallel.jpg" width="30%"/> <br>
 </p>
@@ -197,9 +205,12 @@ Information Extraction
     "里程数": "26.1km"
 }
 ```
-
+</details>
 
 Translation
+<details>
+<summary>Click to view detailed results.</summary>
+</details>
 
 
 </details>
