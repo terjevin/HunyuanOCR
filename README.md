@@ -167,7 +167,9 @@ Spotting
 
 <p align="left">
  <img src="./assets/spotting1_cropped.png" width="30%"/> <br>
+ <img src="./assets/vis_document_23.jpg" width="30%"/> <br>
 </p>
+
 
 Document Processing
 
