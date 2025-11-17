@@ -165,8 +165,8 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 
 Spotting
 
-<p align="center">
- <img src="./assets/spotting1_cropped.png" width="50%"/> <br>
+<p align="left">
+ <img src="./assets/spotting1_cropped.png" width="30%"/> <br>
 </p>
 
 Document Processing
