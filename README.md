@@ -23,7 +23,7 @@
 - **[2025/11/20]** 📝 Inference code and model weights publicly available.
 
 ## 📖 Introduction
-HunyuanOCR stands as a leading end-to-end OCR expert powered by Hunyuan's native multimodal architecture. With a remarkably lightweight 1B parameter design, it has achieved multiple state-of-the-art benchmarks across the industry. The model demonstrates mastery in complex document parsing while excelling in practical applications including multilingual text recognition, receipt field extraction, subtitle extraction, and photo translation.
+HunyuanOCR stands as a leading end-to-end OCR expert VLM powered by Hunyuan's native multimodal architecture. With a remarkably lightweight 1B parameter design, it has achieved multiple state-of-the-art benchmarks across the industry. The model demonstrates mastery in complex document parsing while excelling in practical applications including multilingual text recognition, open-field information extraction, video subtitle extraction, and photo translation.
 
 Built on Tencent's Hunyuan technology, this versatile model delivers exceptional performance through end-to-end architecture design and single-pass inference. It significantly simplifies deployment while maintaining competitive performance against both established cascade systems and commercial APIs.
 
@@ -31,13 +31,13 @@ Built on Tencent's Hunyuan technology, this versatile model delivers exceptional
 
 - 💪 **Efficient Lightweight Architecture**: Built on Hunyuan's native multimodal architecture and training strategy, achieving SOTA performance with only 1B parameters, significantly reducing deployment costs.
 
-- 📑 **Comprehensive OCR Capabilities**: A single model covering classic OCR tasks including text detection and recognition, complex document parsing, receipt field extraction, and subtitle extraction, while supporting end-to-end photo translation and document QA.
+- 📑 **Comprehensive OCR Capabilities**: A single model covering classic OCR tasks including text detection and recognition, complex document parsing, open-field information extraction and video subtitle extraction, while supporting end-to-end photo translation and document QA.
 
 - 🚀 **Ultimate Usability**: Deeply embraces the "end-to-end" philosophy of large models - achieving SOTA results with single instruction and single inference, offering greater efficiency and convenience compared to industry cascade solutions.
 
 - 🌏 **Extensive Language Support**: Robust support for over 100 languages, excelling in both single-language and mixed-language scenarios across various document types.
 
-<div align="center">
+<div align="left">
   <img src="./assets/hyocr-pipeline.png" alt="HunyuanOCR framework" width="50%">
 </div>
 
