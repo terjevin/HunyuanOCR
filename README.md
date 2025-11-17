@@ -12,9 +12,6 @@
 
 <div align="center">
 
-
-
-
 📑 Paper & Model Weights are coming soon!
 
 
@@ -164,10 +161,13 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 
 > **Summary**: HunyuanOCR significantly outperforms larger models in cards/receipts processing and video subtitle extraction, while maintaining competitive performance on OCRBench.
 
-## 💡 Case Studies
-
+## 💡 Visualizations
 
 Spotting
+
+<p align="center">
+ <img src="./assets/spotting1_cropped.png" width="80%"/> <br>
+</p>
 
 Document Processing
 
