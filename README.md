@@ -181,7 +181,7 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 
 
 <p align="left">
- <img src="./assets/ie_parallel.jpg" width="30%"/> <br>
+ <img src="./assets/ie_parallel.jpg" width="10%"/> <br>
 </p>
 
 **Prompt:**
@@ -200,6 +200,17 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
     "里程数": "26.1km"
 }
 ```
+
+<p align="left">
+ <img src="./assets/zimu2.jpg" width="20%"/> <br>
+</p>
+
+**Prompt:**
+提取图中的字幕
+
+**Response:**
+对不起 我是诺曼·斯佩尔曼\nSorry, I'm Norm. Spellman.
+
 
 
 ### Translation
