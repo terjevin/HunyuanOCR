@@ -162,6 +162,8 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 > **Summary**: HunyuanOCR significantly outperforms larger models in cards/receipts processing and video subtitle extraction, while maintaining competitive performance on OCRBench.
 
 ## 💡 Visualizations
+<details>
+<summary>点击展开查看详细效果</summary>
 
 Spotting
 
@@ -175,12 +177,32 @@ Document Processing
 
 
 Information Extraction
+<p align="left">
+ <img src="./assets/ie_parallel.jpg" width="30%"/> <br>
+</p>
+
+**Prompt:**
+提取图片中的：['单价', '上车时间', '发票号码', '省前缀', '总金额', '发票代码', '下车时间', '里程数'] 的字段内容，并且按照JSON格式返回。
+
+**Response:**
+```json
+{
+    "单价": "3.00",
+    "上车时间": "09:01",
+    "发票号码": "42609332",
+    "省前缀": "陕",
+    "总金额": "￥77.10元",
+    "发票代码": "161002018100",
+    "下车时间": "09:51",
+    "里程数": "26.1km"
+}
+```
 
 
 Translation
 
 
-
+</details>
 
 
 ## 📚 Citation
