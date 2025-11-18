@@ -213,7 +213,7 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 
 ## 💡 效果可视化
 <details>
-<summary>点击展开详情</summary>
+<summary><u style="color: #2E64FE;">点击展开详情</u></summary>
 
 ### 文字检测识别
 
