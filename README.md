@@ -220,7 +220,8 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 
 ## 💡 Visualizations
 <details>
-<summary>Click here to view detailed results.</summary>
+<summary><span style="border-bottom: 2px solid #2E64FE; color: #2E64FE; transition: border-bottom 0.3s;">Click here to view detailed results.</span></summary>
+
 
 ### Spotting
 
