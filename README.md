@@ -57,8 +57,8 @@ Built on Tencent's Hunyuan technology, this versatile model delivers exceptional
 - ⚡ CUDA: 12.8
 - 🔥 PyTorch: 2.7.1
 - 🎮 GPU: NVIDIA GPU with CUDA support
-- 🧠 GPU Memory: ≥3×80GB (4×80GB recommended for better performance)
-- 💾 Disk Space: 170GB for model weights
+- 🧠 GPU Memory: 80GB
+- 💾 Disk Space: 6GB
 
 ### Installation
 ```bash
