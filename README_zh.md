@@ -222,7 +222,7 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 <summary><u style="color: #2E64FE;">点击展开详情</u></summary>
 
 ### 文字检测识别
-#### 旨在对文字图像中出现的所有文字，按照行级别粒度进行文本内容和对应的坐标信息输出。我们模型对文档、艺术字、街景、手写、广告、票据、截屏、游戏、视频等场景上表现卓越。
+#### 旨在对文字图像中出现的所有文字，按照行级别粒度进行文本内容和对应的坐标信息输出。我们的模型对文档、艺术字、街景、手写、广告、票据、截屏、游戏、视频等场景上表现卓越。
 
 
 <p align="left">
@@ -231,12 +231,16 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 </p>
 
 
-### 文档解析
+### 复杂文档解析
+#### 对多语种文档扫描件或拍摄图像进行电子化，具体地，是将图片中出现的文本内容按照阅读顺序进行组织、公式采用Latex格式、复杂表格采用HTML格式表达。
+
 <p align="left">
  <img src="./assets/vis-parsing.png" width="20%"/> <br>
 </p>
 
-### 信息抽取
+### 开放字段信息提取
+#### 对常见卡证和票据的感兴趣字段（如姓名/地址/单位等），采用标准的json格式解析。
+
 
 
 <p align="left">
@@ -260,6 +264,9 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 }
 ```
 
+### 视频字幕提取
+#### 能够对视频的字幕实现自动化抽取，包括双语字幕。
+
 <p align="left">
  <img src="./assets/zimu2.jpg" width="20%"/> <br>
 </p>
@@ -272,7 +279,10 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 
 
 
-### 翻译
+### 拍照翻译功能
+#### 对拍照的小语种图片能够进行端到端翻译成中文或英文的文本格式输出，目前主要支持14种高频应用小语种（具体包括：德语、西班牙语、土耳其语、意大利语、俄语、法语、葡萄牙语、阿拉伯语、泰语、越南语、印尼语、马来语、日语、韩语）翻译成中/英文，以及中英互译功能（参加ICDAR2025文档端到端翻译比赛赢得了小模型赛道冠军成绩）。
+
+
 <p align="left">
  <img src="./assets/vis-translation.png" width="20%"/> <br>
 </p>
