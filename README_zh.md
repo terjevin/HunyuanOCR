@@ -241,6 +241,10 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
  <img src="./assets/show_res_parsing_fig.png" width="30%"/> <br>
  <img src="./assets/vis_parsing_table.png" width="30%"/> <br>
  <img src="./assets/vis_parsing_table_2.png" width="30%"/> <br>
+ <img src="./assets/psrsing_rgsj.png" width="30%"/> <br>
+ <img src="./assets/parsing_rgsjz_2.png" width="30%"/> <br>
+ <img src="./assets/qikai1.png" width="30%"/> <br>
+ <img src="./assets/guwan1.png" width="30%"/> <br>
 </p>
 
 
