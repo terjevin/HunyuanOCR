@@ -19,7 +19,7 @@
 
 
 
-[Demo](http://29.210.129.176:8080/) | [Install](#dependencies-and-installation) | [Quick Start](#quick-start-with-transformers) | [Prompt Templates](#application-oriented-prompts) | [Technical Report](./Hunyuan_OCR_Technical_Report.pdf)
+[Demo](http://29.210.129.176:8080/) | [Install](#installation) | [Quick Start](#quick-start) | [Prompt Templates](#prompts)  | [Technical Report](./HunyuanOCR_Technical_Report.pdf)
 
 </div>
 
@@ -48,7 +48,7 @@ Built on Tencent's Hunyuan technology, this versatile model delivers exceptional
 
 
 
-## 🛠️ Dependencies and Installation
+## 🛠️ Dependencies and Installation {#installation}
 
 ### System Requirements
 - 🖥️ Operating System: Linux
@@ -68,7 +68,7 @@ pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https
 
 
 
-## 🚀 Quick Start with Transformers
+## 🚀 Quick Start with Transformers {#quick-start}
 
 ### Model Inference
 
@@ -137,7 +137,7 @@ print(output_texts)
 cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 ```
 
-## 💬 Application-oriented Prompts
+## 💬 Application-oriented Prompts {#prompts}
 
 | Task | English | Chinese |
 |------|---------|---------|

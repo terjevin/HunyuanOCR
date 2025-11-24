@@ -15,8 +15,8 @@
 
 <div align="center">
 
+[演示](http://29.210.129.176:8080/) | [安装](#installation) | [快速开始](#quick-start) | [提示词](#prompts) | [技术报告](./HunyuanOCR_Technical_Report.pdf)
 
-[演示](http://29.210.129.176:8080/) | [安装](#环境依赖与安装) | [快速开始](#基于transformers快速使用) | [提示词](#推荐的ocr任务提示词) | [技术报告](./Hunyuan_OCR_Technical_Report.pdf)
 </div>
 
 ## 🔥 最新动态
@@ -41,7 +41,7 @@
   <img src="./assets/hyocr-pipeline.png" alt="HunyuanOCR框架" width="80%">
 </div>
 
-## 🛠️ 环境依赖与安装
+## 🛠️ 环境依赖与安装 {#installation}
 
 ### 系统要求
 - 🖥️ 操作系统：Linux
@@ -59,7 +59,7 @@ pip install opencv-python-headless
 pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128
 ```
 
-## 🚀 基于Transformers快速使用
+## 🚀 基于Transformers快速使用 {#quick-start}
 
 ### 模型推理
 
@@ -130,7 +130,7 @@ print(output_texts)
 cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 ```
 
-## 💬 推荐的OCR任务提示词
+## 💬 推荐的OCR任务提示词 {#prompts}
 | 任务 | 中文提示词 | 英文提示词 |
 |------|---------|---------|
 | **文字检测识别** | 检测并识别图片中的文字，将文本坐标格式化输出。 | Detect and recognize text in the image, and output the text coordinates in a formatted manner. |
