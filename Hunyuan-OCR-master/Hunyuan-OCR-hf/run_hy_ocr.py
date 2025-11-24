@@ -46,7 +46,7 @@ def main():
             "content": [
                 {"type": "image", "image": img_path},
                 {"type": "text", "text": (
-                    "检测并识别图片中的文字，将文本坐标格式化输出。"
+                    "提取文档图片中正文的所有信息用markdown格式表示，其中页眉、页脚部分忽略，表格用html格式表达，文档中公式用latex格式表示，按照阅读顺序组织进行解析。"
                 )},
             ],
         }
