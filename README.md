@@ -64,10 +64,30 @@ pip install vllm --extra-index-url https://wheels.vllm.ai/nightly
 
 ### Model Inference
 
+
 ```python
 from vllm import LLM, SamplingParams
 from PIL import Image
 from transformers import AutoProcessor
+
+def clean_repeated_substrings(text):
+    """Clean repeated substrings in text"""
+    n = len(text)
+    if n<8000:
+        return text
+    for length in range(2, n // 10 + 1):
+        candidate = text[-length:] 
+        count = 0
+        i = n - length
+        
+        while i >= 0 and text[i:i + length] == candidate:
+            count += 1
+            i -= length
+
+        if count >= 10:
+            return text[:n - length * (count - 1)]  
+
+    return text
 
 model_path = "tencent/HunyuanOCR"
 llm = LLM(model=model_path, trust_remote_code=True)
@@ -84,7 +104,7 @@ messages = [
 ]
 prompt = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
 inputs = {"prompt": prompt, "multi_modal_data": {"image": [img]}}
-output = llm.generate([inputs], sampling_params)[0]
+output = clean_repeated_substrings(llm.generate([inputs], sampling_params)[0])
 print(output.outputs[0].text)
 ```
 
