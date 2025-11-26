@@ -61,15 +61,20 @@
 - **[HunyuanOCR Usage Guide](https://docs.vllm.ai/projects/recipes/en/latest/Tencent-Hunyuan/HunyuanOCR.html)**
 
 ### Installation
-Using `pip`: 
 ```bash
-pip install vllm --pre --extra-index-url https://wheels.vllm.ai/nightly
+uv venv hunyuanocr
+source hunyuanocr/bin/activate
+
+uv pip install -U vllm --pre --extra-index-url https://wheels.vllm.ai/nightly
 ```
 
-Using `uv`
-
+Note: We suggest to install [cuda-compat-12-9](https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/):
 ```bash
-uv pip install vllm --extra-index-url https://wheels.vllm.ai/nightly
+sudo dpkg -i cuda-compat-12-9_575.57.08-0ubuntu1_amd64.deb
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.9/compat:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+# verify cuda-compat-12-9
+ls /usr/local/cuda-12.9/compat
 ```
 
 ### Model Deploy
