@@ -115,6 +115,7 @@ sampling_params = SamplingParams(temperature=0, max_tokens=16384)
 img_path = "/path/to/image.jpg"
 img = Image.open(img_path)
 messages = [
+    {"role": "system", "content": ""},
     {"role": "user", "content": [
         {"type": "image", "image": img_path},
         {"type": "text", "text": "检测并识别图片中的文字，将文本坐标格式化输出。"}
@@ -152,6 +153,7 @@ processor = AutoProcessor.from_pretrained(model_name_or_path, use_fast=False)
 img_path = "path/to/your/image.jpg"
 image_inputs = Image.open(img_path)
 messages1 = [
+    {"role": "system", "content": ""},
     {
         "role": "user",
         "content": [
