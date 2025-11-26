@@ -53,7 +53,7 @@
 - ⚡ CUDA: 12.8
 - 🔥 PyTorch: 2.7.1
 - 🎮 GPU: NVIDIA GPU with CUDA support
-- 🧠 GPU Memory: 80GB
+- 🧠 GPU Memory: 20GB (for vLLM)
 - 💾 Disk Space: 6GB
 
 ## 🚀 Quick Start with vLLM (⭐ Recommended)
@@ -70,6 +70,14 @@ Using `uv`
 
 ```bash
 uv pip install vllm --extra-index-url https://wheels.vllm.ai/nightly
+```
+
+### Model Deploy
+```bash
+vllm serve tencent/HunyuanOCR \
+    --no-enable-prefix-caching \
+    --mm-processor-cache-gb 0 \
+    --gpu-memory-utilization 0.2
 ```
 
 ### Model Inference
@@ -252,7 +260,7 @@ cd Hunyuan-OCR-master/Hunyuan-OCR-hf && python run_hy_ocr.py
 
 > **Summary**: HunyuanOCR significantly outperforms larger models in cards/receipts processing and video subtitle extraction, while maintaining competitive performance on OCRBench.
 
-### Text Image Transation (in-house Benchmark) Performance
+### Text Image Translation (in-house Benchmark) Performance
 
 | Method | Size | Other2En | Other2Zh | DoTA (en2zh) |
 |--------|------|-----------|-----------|--------------|

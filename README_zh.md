@@ -49,7 +49,7 @@
 - ⚡ CUDA版本：12.8
 - 🔥 PyTorch版本：2.7.1
 - 🎮 GPU：支持CUDA的NVIDIA显卡
-- 🧠 GPU显存：80GB 
+- 🧠 GPU显存：20GB (for vLLM)
 - 💾 磁盘空间：6GB
 
 ## 🚀 基于vLLM快速使用 (⭐ 推荐)
@@ -65,6 +65,14 @@ pip install vllm --pre --extra-index-url https://wheels.vllm.ai/nightly
 
 ```bash
 uv pip install vllm --extra-index-url https://wheels.vllm.ai/nightly
+```
+
+### 模型部署
+```bash
+vllm serve tencent/HunyuanOCR \
+    --no-enable-prefix-caching \
+    --mm-processor-cache-gb 0 \
+    --gpu-memory-utilization 0.2
 ```
 
 ### 模型推理
