@@ -1,0 +1,93 @@
+version: '3.8'
+
+services:
+  coordinator:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.coordinator
+    ports:
+      - "8000:8000"
+    environment:
+      - COORDINATOR_HOST=0.0.0.0
+      - COORDINATOR_PORT=8000
+      - TEMP_DIR=/dev/shm/ocr_temp
+    volumes:
+      - /dev/shm:/dev/shm
+    deploy:
+      resources:
+        limits:
+          cpus: '12'
+          memory: 22G
+    restart: unless-stopped
+    networks:
+      - ocr-network
+
+  worker1:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.worker
+    ports:
+      - "8001:8001"
+    environment:
+      - WORKER_NAME=worker1
+      - WORKER_HOST=0.0.0.0
+      - WORKER_PORT=8001
+      - TEMP_DIR=/dev/shm/ocr_temp
+    volumes:
+      - /dev/shm:/dev/shm
+    deploy:
+      resources:
+        limits:
+          cpus: '12'
+          memory: 22G
+    restart: unless-stopped
+    networks:
+      - ocr-network
+
+  worker2:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.worker
+    ports:
+      - "8002:8001"
+    environment:
+      - WORKER_NAME=worker2
+      - WORKER_HOST=0.0.0.0
+      - WORKER_PORT=8001
+      - TEMP_DIR=/dev/shm/ocr_temp
+    volumes:
+      - /dev/shm:/dev/shm
+    deploy:
+      resources:
+        limits:
+          cpus: '12'
+          memory: 22G
+    restart: unless-stopped
+    networks:
+      - ocr-network
+
+  worker3:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.worker
+    ports:
+      - "8003:8001"
+    environment:
+      - WORKER_NAME=worker3
+      - WORKER_HOST=0.0.0.0
+      - WORKER_PORT=8001
+      - TEMP_DIR=/dev/shm/ocr_temp
+    volumes:
+      - /dev/shm:/dev/shm
+    deploy:
+      resources:
+        limits:
+          cpus: '12'
+          memory: 22G
+    restart: unless-stopped
+    networks:
+      - ocr-network
+
+networks:
+  ocr-network:
+    driver: bridge
