@@ -33,5 +33,8 @@ TEMP_DIR = os.getenv("TEMP_DIR", "/dev/shm/ocr_temp")
 MAX_RETRIES = int(os.getenv("MAX_RETRIES", "3"))
 RETRY_DELAY_SECONDS = int(os.getenv("RETRY_DELAY_SECONDS", "2"))
 
+# Timeout Configuration
+WORKER_REQUEST_TIMEOUT = int(os.getenv("WORKER_REQUEST_TIMEOUT", "120"))  # seconds
+
 # PDF Configuration
 DEFAULT_DPI = int(os.getenv("DEFAULT_DPI", "200"))

@@ -26,7 +26,8 @@ from shared.models import (
 )
 from shared.config import (
     WORKER_NODES, COORDINATOR_HOST, COORDINATOR_PORT,
-    MAX_RETRIES, RETRY_DELAY_SECONDS, DEFAULT_DPI, TEMP_DIR
+    MAX_RETRIES, RETRY_DELAY_SECONDS, DEFAULT_DPI, TEMP_DIR,
+    WORKER_REQUEST_TIMEOUT
 )
 
 # Configure logging
@@ -101,7 +102,7 @@ async def send_ocr_request(
         response = await client.post(
             url,
             json=request_data.model_dump(),
-            timeout=120.0  # 2 minutes timeout for OCR processing
+            timeout=WORKER_REQUEST_TIMEOUT
         )
         
         if response.status_code == 200:

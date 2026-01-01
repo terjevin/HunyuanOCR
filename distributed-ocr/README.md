@@ -331,6 +331,7 @@ curl http://158.39.75.13:8001/health
 - `DEFAULT_DPI`: Default DPI for PDF conversion (default: 200)
 - `MAX_RETRIES`: Maximum retry attempts (default: 3)
 - `RETRY_DELAY_SECONDS`: Initial retry delay (default: 2)
+- `WORKER_REQUEST_TIMEOUT`: Timeout for worker requests in seconds (default: 120)
 
 ### Modifying Worker Nodes
 
@@ -358,6 +359,16 @@ PaddleOCR supports 100+ languages. Common language codes:
 
 For Norwegian, Swedish, Danish, and other Latin-script languages, use `en` as PaddleOCR handles Latin characters effectively.
 
+**Important Note**: PaddleOCR language is set at worker initialization and cannot be changed dynamically. To process documents in different languages:
+1. Deploy separate worker pools with different language settings, OR
+2. Restart workers with a different `OCR_LANGUAGE` environment variable
+
+To set worker language, edit the systemd service file or set the environment variable:
+```bash
+Environment="OCR_LANGUAGE=ch"  # For Chinese
+Environment="OCR_LANGUAGE=fr"  # For French
+```
+
 **Example (Chinese document):**
 ```bash
 curl -X POST "http://158.39.75.48:8000/ocr/pdf" \
@@ -365,6 +376,8 @@ curl -X POST "http://158.39.75.48:8000/ocr/pdf" \
   -F "language=ch" \
   -F "dpi=300"
 ```
+
+Note: The `language` parameter in the API request is for informational purposes. The actual OCR language is determined by the worker's `OCR_LANGUAGE` environment variable.
 
 ## Manual Installation
 

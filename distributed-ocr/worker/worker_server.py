@@ -7,6 +7,7 @@ import logging
 from io import BytesIO
 from datetime import datetime
 from typing import Optional
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
@@ -30,13 +31,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Initialize FastAPI app
-app = FastAPI(
-    title="OCR Worker Server",
-    description="Worker node for distributed OCR processing using PaddleOCR",
-    version="1.0.0"
-)
-
 # Global variables
 ocr_engine = None
 start_time = time.time()
@@ -48,17 +42,25 @@ os.makedirs(TEMP_DIR, exist_ok=True)
 
 
 def initialize_ocr():
-    """Initialize PaddleOCR engine with CPU optimization."""
+    """Initialize PaddleOCR engine with CPU optimization.
+    
+    Note: PaddleOCR language is set at initialization and cannot be changed
+    dynamically without reinitialization. The default language is 'en', which
+    works well for Latin-based scripts. For other languages, set the OCR_LANGUAGE
+    environment variable before starting the worker.
+    """
     global ocr_engine
     try:
         from paddleocr import PaddleOCR
         
+        ocr_language = os.getenv("OCR_LANGUAGE", "en")
+        
         logger.info("Initializing PaddleOCR with CPU optimization...")
-        logger.info(f"CPU Threads: {OCR_CPU_THREADS}, MKLDNN: {ENABLE_MKLDNN}")
+        logger.info(f"Language: {ocr_language}, CPU Threads: {OCR_CPU_THREADS}, MKLDNN: {ENABLE_MKLDNN}")
         
         ocr_engine = PaddleOCR(
             use_angle_cls=True,
-            lang='en',  # Default language, will be overridden per request
+            lang=ocr_language,
             use_gpu=False,
             enable_mkldnn=ENABLE_MKLDNN,
             cpu_threads=OCR_CPU_THREADS,
@@ -67,19 +69,35 @@ def initialize_ocr():
             det_db_thresh=0.3,
         )
         
-        logger.info("PaddleOCR initialized successfully")
+        logger.info(f"PaddleOCR initialized successfully with language: {ocr_language}")
         return True
     except Exception as e:
         logger.error(f"Failed to initialize PaddleOCR: {e}")
         return False
 
 
-@app.on_event("startup")
-async def startup_event():
-    """Initialize OCR engine on startup."""
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Lifespan context manager for startup and shutdown events."""
+    # Startup
+    logger.info(f"Starting OCR Worker Server: {worker_name}")
     success = initialize_ocr()
     if not success:
         logger.error("Failed to initialize OCR engine. Worker may not function properly.")
+    
+    yield
+    
+    # Shutdown
+    logger.info("Shutting down OCR Worker Server")
+
+
+# Initialize FastAPI app with lifespan
+app = FastAPI(
+    title="OCR Worker Server",
+    description="Worker node for distributed OCR processing using PaddleOCR",
+    version="1.0.0",
+    lifespan=lifespan
+)
 
 
 @app.get("/health")
